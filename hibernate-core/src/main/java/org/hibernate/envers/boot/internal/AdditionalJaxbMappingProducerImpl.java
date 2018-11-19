@@ -33,6 +33,7 @@ import org.hibernate.boot.spi.AdditionalJaxbMappingProducer;
 import org.hibernate.boot.spi.MetadataBuildingContext;
 import org.hibernate.boot.spi.MetadataImplementor;
 import org.hibernate.envers.configuration.internal.MappingCollector;
+import org.hibernate.internal.build.AllowPrintStacktrace;
 import org.hibernate.service.ServiceRegistry;
 import org.jboss.jandex.IndexView;
 import org.jboss.logging.Logger;
@@ -106,6 +107,7 @@ public class AdditionalJaxbMappingProducerImpl implements AdditionalJaxbMappingP
 		return additionalMappingDocuments;
 	}
 
+	@AllowPrintStacktrace
 	private static void dump(Document document) {
 		if ( !log.isTraceEnabled() ) {
 			return;
